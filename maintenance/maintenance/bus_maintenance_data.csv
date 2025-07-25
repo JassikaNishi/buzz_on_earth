@@ -1,0 +1,21 @@
+Bus_ID,Make,Model,Year,Mileage (km),Hours of Operation,Maintenance Costs ($),Last Maintenance Date,Breakdowns (last year),Downtime (days),Driver Behavior Score (out of 100),Departure,Destination
+Bus_1,Make_A,Model_Z,2018,174438,9964,21840.2,2023-06-22,4,5,58,East Side,North Park
+Bus_2,Make_C,Model_Z,2016,83083,6650,21857.41,2023-01-12,4,3,75,Central Station,South Valley
+Bus_3,Make_B,Model_Z,2017,71541,8948,19875.09,2023-04-25,4,18,99,West End,East Side
+Bus_4,Make_C,Model_Y,2019,271517,12392,12549.85,2023-12-05,4,9,88,South Valley,Central Station
+Bus_5,Make_A,Model_Y,2018,186564,3894,8200.63,2023-01-21,4,3,90,East Side,West End
+Bus_6,Make_B,Model_Y,2015,214291,13640,34992.66,2023-02-08,3,6,57,North Park,East Side
+Bus_7,Make_C,Model_Z,2018,290693,6216,37784.06,2023-12-08,2,24,87,Central Station,West End
+Bus_8,Make_A,Model_X,2019,176930,5937,25252.53,2023-09-14,0,20,79,South Valley,East Side
+Bus_9,Make_A,Model_Y,2018,293227,7237,48953.03,2023-05-08,4,28,83,West End,Central Station
+Bus_10,Make_C,Model_Z,2015,103235,2028,28865.52,2023-06-14,4,29,71,East Side,South Valley
+Bus_11,Make_C,Model_X,2018,62614,4400,9259.2,2023-02-19,5,16,66,North Park,West End
+Bus_12,Make_B,Model_Y,2017,164236,5274,14487.81,2023-12-07,1,30,62,South Valley,North Park
+Bus_13,Make_C,Model_Y,2018,51770,12916,7637.12,2023-12-23,1,5,57,West End,Central Station
+Bus_14,Make_C,Model_Z,2018,182676,2693,18441.01,2023-02-08,2,26,100,North Park,East Side
+Bus_15,Make_C,Model_X,2019,222676,14022,48420.47,2023-07-02,1,11,77,South Valley,West End
+Bus_16,Make_C,Model_Y,2019,283557,6668,36657.39,2023-10-03,4,3,54,East Side,Central Station
+Bus_17,Make_C,Model_Y,2017,128980,6634,8477.83,2023-04-12,1,1,77,North Park,South Valley
+Bus_18,Make_C,Model_X,2015,67209,7386,5619.85,2023-04-24,3,20,76,West End,East Side
+Bus_19,Make_B,Model_X,2017,232349,7855,24945.91,2023-02-27,4,30,57,Central Station,West End
+Bus_20,Make_A,Model_Y,2015,93927,13436,8379.93,2023-01-19,5,2,50,East Side,North Park
