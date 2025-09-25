@@ -9,8 +9,8 @@ import base64
 app = Flask(__name__)
 
 # Load dataset and model
-df = pd.read_csv(r"C:\Users\jassika\OneDrive\Desktop\Katoch's model\travell-pattern\travell-pattern\week_bus_departure_data.csv")
-model_path = r"C:\Users\jassika\OneDrive\Desktop\Katoch's model\travell-pattern\travell-pattern\crowd_forecast_model.pkl"
+df = pd.read_csv(r"C:\Users\KHUSHI KAVYA\Desktop\buzzmodel\travell-pattern\travell-pattern\week_bus_departure_data.csv")
+model_path = r"C:\Users\KHUSHI KAVYA\Desktop\buzzmodel\travell-pattern\travell-pattern\crowd_forecast_model.pkl"
 
 # Convert 'Departure Time' to datetime objects
 df['Departure Time'] = pd.to_datetime(df['Departure Time'])
