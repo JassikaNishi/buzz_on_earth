@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transit AI Dashboard</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 240px;
+            height: 100vh;
+            background: #0d0d0d; /* Black */
+            color: white;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 30px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.4);
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: #2ecc71; /* Mint Green */
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 14px 22px;
+            color: #cfcfcf;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background: #1a1a1a;
+            color: #2ecc71;
+            border-left: 4px solid #2ecc71;
+        }
+
+        /* Content Area */
+        #mainContent {
+            margin-left: 240px;
+            height: 100vh;
+            background: #ffffff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h3>SAFAR </h3>
+
+        <a onclick="loadPage('/crowd')">👥 Crowd Forecast</a>
+        <a onclick="loadPage('/route')">🚌 Route Optimisation</a>
+        <a onclick="loadPage('/maintenance')">🛠 Bus Maintenance</a>
+    </div>
+
+    <div id="mainContent">
+        <!-- Default Page Loaded -->
+        <iframe id="frame" src="/crowd"></iframe>
+    </div>
+
+    <script>
+        function loadPage(url) {
+            document.getElementById('frame').src = url;
+        }
+    </script>
+
+</body>
+</html>

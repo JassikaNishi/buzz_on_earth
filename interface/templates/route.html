@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Route Optimisation</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: #f6fffb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card-custom {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            border: 1px solid #d9efe5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #0d5b4c;
+        }
+
+        label {
+            font-weight: 600;
+            color: #0f6f59;
+        }
+
+        .btn-mint {
+            background: #1abc9c;
+            color: white;
+            font-weight: 600;
+        }
+        .btn-mint:hover {
+            background: #159a80;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+    <h2>Route Optimisation</h2>
+
+    <div class="card-custom mt-4">
+        <form action="/route" method="POST">
+            <label>From Location:</label>
+            <select name="from_loc" class="form-control mt-2">
+                {% for loc in locations %}
+                <option value="{{ loc }}">{{ loc }}</option>
+                {% endfor %}
+            </select>
+
+            <label class="mt-3">To Location:</label>
+            <select name="to_loc" class="form-control">
+                {% for loc in locations %}
+                <option value="{{ loc }}">{{ loc }}</option>
+                {% endfor %}
+            </select>
+
+            <button class="btn btn-mint mt-3">Find Best Route</button>
+        </form>
+    </div>
+
+    {% if error %}
+    <div class="alert alert-danger mt-4">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+    <div class="card-custom mt-4">
+        <h4 class="mb-3">Best Route Recommendation</h4>
+
+        <p><b>Best Bus Type:</b> {{ result.best_bus }}</p>
+        <p><b>Distance:</b> {{ result.distance }} km</p>
+        <p><b>Total Cost:</b> ${{ result.cost }}</p>
+        <p><b>Travel Time:</b> {{ result.time_h }} hours {{ result.time_m }} minutes</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Transit AI Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root{
+            --mint: #27ae60;
+            --mint-600: #239a55;
+            --sidebar-bg: #0b0b0c;
+            --muted: #9aa0a6;
+            --card-radius: 12px;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 240px;
+            height: 100vh;
+            background: var(--sidebar-bg);
+            position: fixed;
+            color: white;
+            top: 0;
+            left: 0;
+            padding-top: 30px;
+        }
+
+        .sidebar .brand {
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: .4px;
+        }
+
+        .sidebar a {
+            display:block;
+            color: #cfd6da;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            border-left: 4px solid transparent;
+        }
+        .sidebar a:hover { background: rgba(255,255,255,0.02); color: white; }
+        .sidebar a.active { background: linear-gradient(90deg, rgba(39,174,96,0.12), rgba(39,174,96,0.06)); color: white; border-left-color: var(--mint); }
+
+        .content {
+            margin-left: 260px;
+            padding: 30px;
+        }
+
+        .card {
+            border-radius: var(--card-radius);
+            box-shadow: 0 5px 18px rgba(25,28,33,0.06);
+        }
+
+        .btn-mint {
+            background: var(--mint);
+            border: none;
+            color: white;
+        }
+        .btn-mint:hover { background: var(--mint-600); }
+
+        label.form-label {
+            font-weight: 600;
+            color: #2b2b2b;
+        }
+
+        .small-muted { color: var(--muted); font-size: .9rem; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand">Transit AI</div>
+        <a href="{{ url_for('home') }}" class="{{ 'active' if page=='dashboard' else '' }}">🏠 Dashboard</a>
+        <a href="{{ url_for('crowd') }}" class="{{ 'active' if page=='crowd' else '' }}">👥 Crowd Forecast</a>
+        <a href="{{ url_for('route_page') }}" class="{{ 'active' if page=='route' else '' }}">🚌 Route Optimisation</a>
+        <a href="{{ url_for('maintenance_page') }}" class="{{ 'active' if page=='maintenance' else '' }}">🛠 Bus Maintenance</a>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

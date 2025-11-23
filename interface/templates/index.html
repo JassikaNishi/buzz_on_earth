@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAFAR — Transit AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="SAFAR">
+            <h2>SAFAR</h2>
+        </div>
+
+        <a class="nav-link active" onclick="loadPage('/crowd')">👥 Crowd Forecast</a>
+        <a class="nav-link" onclick="loadPage('/route')">🚌 Route Optimisation</a>
+        <a class="nav-link" onclick="loadPage('/maintenance')">🛠 Bus Maintenance</a>
+    </div>
+
+    <!-- MAIN CONTENT (IFRAME) -->
+    <div class="main">
+        <div class="header">
+            <h1 id="page-title">Crowd Forecast</h1>
+        </div>
+
+        <iframe id="main-frame" src="/crowd"></iframe>
+    </div>
+
+    <script>
+        function loadPage(url) {
+            // Change iframe
+            document.getElementById("main-frame").src = url;
+
+            // Highlight active link
+            let links = document.querySelectorAll('.nav-link');
+            links.forEach(l => l.classList.remove("active"));
+            event.target.classList.add("active");
+
+            // Update header title
+            document.getElementById("page-title").innerText = event.target.innerText;
+        }
+    </script>
+
+</body>
+</html>
